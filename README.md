@@ -1,4 +1,4 @@
-# 🛡️ Enterprise Web Security Scanner
+# 🛡️ Web Security Scanner
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Flask](https://img.shields.io/badge/Framework-Flask-green)
