@@ -32,9 +32,8 @@ Unlike complex enterprise tools that take hours to run, this scanner provides an
 Follow these steps to run the scanner locally:
 
 1. Clone the Repository
+git clone [https://github.com/your-username/web-security-scanner.git](https://github.com/himanshuyadav09/Web-Security-Scanner.git)
 
-git clone [https://github.com/your-username/web-security-scanner.git](https://github.com/your-username/web-security-scanner.git)
-cd web-security-scanner
 
 2. Install Dependencies
 Create a virtual environment (optional but recommended) and install the required packages:
@@ -46,4 +45,4 @@ python app.py
 
 4. Access the Dashboard
 Open your web browser and navigate to:
-[http://127.0.0.1:5000](http://127.0.0.1:5000)
+[http://127.0.0.1:5000]
