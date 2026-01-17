@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Security Audit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-shield-halved"></i> Web Security Scan</div>
+        <button class="print-btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save Report</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Enterprise Security Audit</h1>
+            <p>Advanced Vulnerability Assessment & Risk Scoring</p>
+            
+            <div class="search-box-wrapper">
+                <div class="search-glass">
+                    <i class="fas fa-globe input-icon"></i>
+                    <input type="text" id="urlInput" placeholder="www.example.com">
+                    <button onclick="startScan()" id="scanBtn">Audit Target</button>
+                </div>
+            </div>
+            <p id="errorMsg"></p>
+        </div>
+    </header>
+
+    <div id="loader" class="hidden">
+        <div class="radar-spinner"></div>
+        <p>Scanning Target Infrastructure...</p>
+    </div>
+
+    <main id="results" class="hidden">
+        
+        <div class="dashboard-grid">
+            <div class="card grade-card">
+                <h3>Security Grade</h3>
+                <div class="grade-circle" id="gradeCircle">-</div>
+                <p id="riskText">Pending...</p>
+            </div>
+
+            <div class="card intel-card">
+                <h3><i class="fas fa-server"></i> Server Intelligence</h3>
+                <div class="intel-item">
+                    <span>IP Address:</span> <strong id="ipText">...</strong>
+                </div>
+                <div class="intel-item">
+                    <span>Location:</span> <strong id="locText">...</strong>
+                </div>
+                <div class="intel-item">
+                    <span>Latency:</span> <strong id="latText">...</strong>
+                </div>
+                <div class="intel-item">
+                    <span>SSL Validity:</span> <strong id="sslText">...</strong>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h3><i class="fas fa-chart-pie"></i> Risk Analysis</h3>
+                <div class="canvas-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="findings-container">
+            <div class="panel warning-panel">
+                <h3><i class="fas fa-bug"></i> Identified Risks</h3>
+                <div id="vulnList"></div>
+            </div>
+            
+            <div class="panel safe-panel">
+                <h3><i class="fas fa-shield-check"></i> Passed Audits</h3>
+                <div id="goodList"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 WebSecurity Scan. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
